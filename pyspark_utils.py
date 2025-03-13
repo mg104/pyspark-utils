@@ -203,7 +203,13 @@ def groupedLag(
     )
     grouped_lag_expr = (
         first(normal_lag_col)
-        .over(Window.partitionBy(lagGroupCols))
+        .over(
+            Window
+            .partitionBy(
+                partitionByCols + 
+                lagGroupCols
+            )
+        )
     )
     return grouped_lag_expr
 
