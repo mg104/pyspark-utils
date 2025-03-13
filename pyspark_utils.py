@@ -179,6 +179,34 @@ def crossTab1GroupCol(
     )
     return freq_df
 
+def groupedLag(
+    laggedCol,
+    partitionByCols,
+    orderByCols,
+    lagGroupCols
+):
+    for cols in [
+        partitionByCols,
+        orderByCols,
+        lagGroupCols
+    ]:
+        partitionByCols = [partitionByCols] if not isinstance(partitionByCols, list) else partitionByCols
+        orderByCols = [orderByCols] if not isinstance(orderByCols, list) else orderByCols
+        lagGroupCols = [lagGroupCols] if not isinstance(lagGroupCols, list) else lagGroupCols
+    normal_lag_col = (
+        lag(laggedCol)
+        .over(
+            Window
+            .partitionBy(partitionByCols)
+            .orderBy(orderByCols)
+        )
+    )
+    grouped_lag_expr = (
+        first(normal_lag_col)
+        .over(Window.partitionBy(lagGroupCols))
+    )
+    return grouped_lag_expr
+
 ############### DIRECT COUNTDISTINCT METHOD ################################
 
 def countDistinctAgg(self): 
