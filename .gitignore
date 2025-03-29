@@ -2,3 +2,4 @@
 *.egg-info/
 *.tar.gz
 *.whl
+__pycache__
