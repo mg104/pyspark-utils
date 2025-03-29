@@ -54,6 +54,7 @@ def withColumnsOrdered(
         It currently handles calculations like:
             1. Non-window functions: lit, addition, subtraction, etc.
             2. Window functions
+        This method also assumes that you have perl installed in your system.
     """
 
     # Convert original {col: calc} into text parseable by perl
