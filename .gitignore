@@ -1,1 +1,4 @@
 **/devtools/**
+*.egg-info/
+*.tar.gz
+*.whl
