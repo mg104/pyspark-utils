@@ -1,0 +1,14 @@
+[project]
+name = 'pyspark_utils'
+version = '0.1.0'
+description = 'Simple pyspark wrapper methods to add functionality currently missing in native pyspark'
+authors = [
+   {name = "Madhur Gupta", email = "madhurgupta104@gmail.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = ["pyspark>=3.4"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
