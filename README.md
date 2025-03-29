@@ -1,5 +1,5 @@
 Wrapper methods for pyspark functionalities which:
-1. Simplify existing pyspark commands by using preset default values for existing functions/methods
+1. Simplify existing pyspark methods/functions commands by using preset default values
 2. Don't exist at the moment in native pyspark
 
 Wrapper functions/methods provided in this repo help in:
